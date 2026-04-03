@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --bs-primary: #b77bff;
+  --bs-primary-rgb: 183, 123, 255;
+  --bs-secondary: #d8b4ff;
+  --bs-secondary-rgb: 216, 180, 255;
+  --bs-info: #c1a3ff;
+  --bs-info-rgb: 193, 163, 255;
+
+  --bg-main: #0d0818;
+  --bg-panel: #1a0f2d;
+  --bg-soft: #25173f;
+  --text-base: #f4edff;
+  --text-muted: #c8b5e6;
+}
+
+:root[data-bs-theme="light"] {
+  --bs-primary: #7a3cff;
+  --bs-primary-rgb: 122, 60, 255;
+  --bs-secondary: #c7a8ff;
+  --bs-secondary-rgb: 199, 168, 255;
+  --bs-info: #9c83ff;
+  --bs-info-rgb: 156, 131, 255;
+  --bg-main: #f7f5ff;
+  --bg-panel: #ffffff;
+  --bg-soft: #f0eaff;
+  --text-base: #1d1233;
+  --text-muted: #6b5b86;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: linear-gradient(180deg, #0b0716 0%, #15102a 45%, #1d1135 100%);
+  color: var(--text-base);
+}
+
+:root[data-bs-theme="light"] body {
+  background: linear-gradient(180deg, #f7f5ff 0%, #ece6ff 45%, #dfd5ff 100%);
+  color: var(--text-base);
+}
+
+.navbar {
+  background: rgba(26, 15, 45, 0.92) !important;
+  border-bottom: 1px solid #2f1f4f;
+}
+
+:root[data-bs-theme="light"] .navbar {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-bottom: 1px solid #e2d9ff;
+}
+
+.navbar-brand {
+  color: var(--text-base) !important;
+}
+
+.nav-link {
+  color: var(--text-muted) !important;
+}
+
+.nav-link.active,
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--text-base) !important;
+}
+
+.card {
+  background-color: var(--bg-panel);
+  color: var(--text-base);
+  border: 1px solid #2f1b4c;
+}
+
+:root[data-bs-theme="light"] .card,
+:root[data-bs-theme="light"] .list-group-item {
+  border-color: #e2d9ff;
+}
+
+.list-group-item {
+  background-color: var(--bg-panel);
+  color: var(--text-base);
+  border-color: #2f1b4c;
+}
+
+:root[data-bs-theme="light"] .list-group-item {
+  color: var(--text-base);
+}
+
+.text-secondary,
+.text-secondary-emphasis,
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+.text-dark,
+.text-body {
+  color: var(--text-base) !important;
+}
+
+.badge.bg-secondary {
+  color: #1a0f2d !important;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: #9d63e6;
+  --bs-btn-hover-border-color: #9d63e6;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: var(--bs-primary);
+  --bs-btn-hover-border-color: var(--bs-primary);
+  --bs-btn-hover-color: #120a1e;
+}
+
+.btn-outline-dark {
+  color: var(--text-base);
+  border-color: #3a255c;
+}
+
+.btn-outline-dark:hover {
+  background-color: #3a255c;
+  border-color: #3a255c;
+  color: #f4edff;
+}
+
+.bg-hero-gradient {
+  background: linear-gradient(135deg, #140b26 0%, #1f1238 50%, #2a1849 100%);
+}
+
+:root[data-bs-theme="light"] .bg-hero-gradient {
+  background: linear-gradient(135deg, #ede7ff 0%, #d9ceff 50%, #c6b9ff 100%);
+}
+
+.bg-white,
+.bg-light {
+  background-color: var(--bg-panel) !important;
+}
+
+.bg-dark {
+  background-color: #2f1f4c !important;
+}
+
+:root[data-bs-theme="light"] .bg-dark {
+  background-color: #e9defc !important;
+  color: var(--text-base) !important;
+}
+
+:root[data-bs-theme="light"] .bg-dark .text-white,
+:root[data-bs-theme="light"] .bg-dark .text-white-50 {
+  color: var(--text-base) !important;
+  opacity: 0.75 !important;
+}
+
+.progress {
+  background-color: #2a1b45;
+}
+
+:root[data-bs-theme="light"] .progress {
+  background-color: #e9defc;
+}
+
+:root[data-bs-theme="light"] .progress-bar.bg-dark {
+  background-color: var(--bs-primary) !important;
+}
+
+.form-control,
+.input-group-text {
+  background-color: #25173f;
+  border-color: #3a255c;
+  color: var(--text-base);
+}
+
+.form-control::placeholder {
+  color: #b6a0d6;
+}
+
+:root[data-bs-theme="light"] .form-control,
+:root[data-bs-theme="light"] .input-group-text {
+  background-color: #f5efff;
+  border-color: #dcd0f5;
+  color: var(--text-base);
+}
+
+:root[data-bs-theme="light"] .form-control::placeholder {
+  color: #9d8eb9;
+}
+
+.transition-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.transition-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3) !important;
+}
+
+.rotate-n3 {
+  transform: rotate(-3deg);
+}
+
+.theme-toggle {
+  border-radius: 999px;
+}
+
+.text-on-yellow {
+  color: #120a1e !important;
+}

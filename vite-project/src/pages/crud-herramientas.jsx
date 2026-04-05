@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-
-const API_BASE = import.meta.env.VITE_API_URL ?? "https://mouseflow.onrender.com/api";
+import { API_BASE } from "../lib/api";
 
 const emptyForm = {
   id: null,

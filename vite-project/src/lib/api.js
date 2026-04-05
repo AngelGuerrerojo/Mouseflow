@@ -1,4 +1,37 @@
-const API_BASE = import.meta.env.VITE_API_URL ?? "https://mouseflow.onrender.com/api";
+const PROD_API_BASE = "https://mouseflow.onrender.com/api";
+
+function getLocalApiBase() {
+  if (typeof window === "undefined") {
+    return PROD_API_BASE;
+  }
+
+  const protocol = window.location.protocol === "https:" ? "https:" : "http:";
+  return `${protocol}//${window.location.hostname}:3000/api`;
+}
+
+function resolveApiBase() {
+  const configuredBase = (import.meta.env.VITE_API_URL ?? "").trim().replace(/\/$/, "");
+
+  if (typeof window === "undefined") {
+    return configuredBase || PROD_API_BASE;
+  }
+
+  const hostname = window.location.hostname;
+  const isLocalHost = hostname === "localhost" || hostname === "127.0.0.1";
+
+  // Si el build de produccion llega con un VITE_API_URL mal configurado a localhost,
+  // lo corregimos en tiempo de ejecucion para no romper el despliegue.
+  if (configuredBase) {
+    if (!isLocalHost && configuredBase.includes("localhost")) {
+      return PROD_API_BASE;
+    }
+    return configuredBase;
+  }
+
+  return isLocalHost ? getLocalApiBase() : PROD_API_BASE;
+}
+
+export const API_BASE = resolveApiBase();
 
 async function apiFetch(path, options = {}) {
   const resp = await fetch(`${API_BASE}${path}`, {

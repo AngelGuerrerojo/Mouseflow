@@ -26,6 +26,7 @@ app.use(
       "http://127.0.0.1:5000",
       "http://localhost:5001",
       "http://127.0.0.1:5001",
+      "https://mouseflow-6nl2.onrender.com",
     ],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   })

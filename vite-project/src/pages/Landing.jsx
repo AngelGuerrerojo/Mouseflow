@@ -17,21 +17,21 @@ export default function Landing() {
   return (
     <>
       <header className="bg-hero-gradient pt-5 pb-5">
-        <div className="container py-5">
+        <div className="container py-5 landing-shell">
           <div className="row align-items-center gy-5">
             <div className="col-lg-6 order-2 order-lg-1">
               <span className="badge bg-secondary text-dark border border-secondary border-opacity-25 rounded-pill px-3 py-2 mb-3">
                 <i className="bi bi-stars me-1" />
                 Nueva Versión 2.0
               </span>
-              <h1 className="display-3 fw-bold text-dark mb-3 lh-sm">
+              <h1 className="display-3 fw-bold text-dark mb-3 lh-sm landing-title">
                 Aprende lógica de <span className="text-primary position-relative">Programación</span>
               </h1>
-              <p className="lead text-secondary mb-4 w-75">
+              <p className="lead text-secondary mb-4 landing-copy">
                 Una plataforma interactiva diseñada para estudiantes. Domina algoritmos y bases de datos con nuestra
                 metodología práctica.
               </p>
-              <div className="d-flex gap-3">
+              <div className="d-flex flex-column flex-sm-row gap-3 hero-actions">
                 <button
                   type="button"
                   onClick={handleStart}
@@ -52,9 +52,9 @@ export default function Landing() {
             </div>
 
             <div className="col-lg-6 order-1 order-lg-2 text-center">
-              <div className="bg-white rounded-4 shadow-lg p-3 d-inline-block rotate-n3" style={{ maxWidth: 740 }}>
+              <div className="bg-white rounded-4 shadow-lg p-3 d-inline-block rotate-n3 landing-stream-card" style={{ maxWidth: 740 }}>
                 <div
-                  className="bg-dark rounded-3 overflow-hidden position-relative"
+                  className="bg-dark rounded-3 overflow-hidden position-relative landing-stream-frame"
                   style={{ width: "100%", aspectRatio: "16 / 9", minHeight: 360 }}
                 >
                   {(() => {
@@ -118,13 +118,13 @@ export default function Landing() {
               <div className="col-md-6 col-lg-4" key={card.title}>
                 <div className="card border-0 shadow-lg rounded-4 overflow-hidden h-100 transition-hover">
                   <div
-                    className="p-4 text-white position-relative"
+                    className="p-4 text-white position-relative landing-feature-top"
                     style={{ background: card.bg, height: 170 }}
                   >
                 {/* badge removido */}
                     <h4 className="fw-bold mb-2 text-white">{card.title}</h4>
                     <div
-                      className="position-absolute top-50 end-0 translate-middle-y opacity-25"
+                      className="position-absolute top-50 end-0 translate-middle-y opacity-25 landing-feature-icon"
                       style={{
                     width: 140,
                     height: 140,

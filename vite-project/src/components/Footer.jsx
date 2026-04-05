@@ -64,8 +64,8 @@ export default function Footer() {
           style={{ backgroundColor: "rgba(0,0,0,0.6)", zIndex: 1050 }}
         >
           <div
-            className="bg-white rounded-4 shadow p-4"
-            style={{ minWidth: 360, maxWidth: 520, maxHeight: "80vh", overflowY: "auto" }}
+            className="bg-white rounded-4 shadow p-4 footer-donate-modal"
+            style={{ width: "min(520px, calc(100vw - 1.5rem))", maxHeight: "80vh", overflowY: "auto" }}
           >
             <div className="d-flex justify-content-between align-items-center mb-3">
               <h6 className="fw-bold mb-0">Apoya el proyecto</h6>

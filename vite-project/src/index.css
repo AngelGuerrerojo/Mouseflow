@@ -40,6 +40,7 @@ body {
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   background: linear-gradient(180deg, #0b0716 0%, #15102a 45%, #1d1135 100%);
   color: var(--text-base);
+  overflow-x: hidden;
 }
 
 :root[data-bs-theme="light"] body {
@@ -214,4 +215,145 @@ body {
 
 .text-on-yellow {
   color: #120a1e !important;
+}
+
+.landing-copy {
+  max-width: 34rem;
+}
+
+.dashboard-code-block,
+.lesson-content pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.nav-action-btn {
+  min-width: 9rem;
+}
+
+.lesson-answer-pill {
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+@media (max-width: 991.98px) {
+  .nav-brand {
+    font-size: 1.1rem !important;
+  }
+
+  .nav-panel {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid #3a255c;
+    border-radius: 1.25rem;
+    background: rgba(26, 15, 45, 0.96);
+  }
+
+  :root[data-bs-theme="light"] .nav-panel {
+    background: rgba(255, 255, 255, 0.96);
+    border-color: #e2d9ff;
+  }
+
+  .nav-links-wrap {
+    align-items: stretch !important;
+    gap: 0.75rem;
+  }
+
+  .nav-links-wrap .nav-item,
+  .nav-links-wrap .nav-link,
+  .nav-links-wrap .nav-action-btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .nav-links-wrap .nav-link {
+    padding: 0.75rem 1rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  :root[data-bs-theme="light"] .nav-links-wrap .nav-link {
+    background: rgba(122, 60, 255, 0.08);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .auth-page {
+    padding-top: 5rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .auth-card {
+    border-radius: 1.5rem !important;
+  }
+
+  .auth-brand {
+    font-size: 1.75rem !important;
+    line-height: 1.1;
+  }
+
+  .landing-shell,
+  .dashboard-shell,
+  .lesson-shell {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  .landing-title {
+    font-size: clamp(2.3rem, 10vw, 3.2rem) !important;
+  }
+
+  .landing-copy {
+    width: 100%;
+    max-width: none;
+    font-size: 1rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .landing-stream-card {
+    max-width: 100% !important;
+    transform: none !important;
+  }
+
+  .landing-stream-frame {
+    min-height: 220px !important;
+  }
+
+  .landing-feature-top {
+    height: 150px !important;
+  }
+
+  .landing-feature-icon {
+    width: 100px !important;
+    height: 100px !important;
+    right: 0.75rem !important;
+  }
+
+  .dashboard-explore-actions {
+    width: 100%;
+  }
+
+  .dashboard-explore-actions .btn {
+    width: 100%;
+  }
+
+  .lesson-evaluate-actions .btn {
+    width: 100%;
+  }
+
+  .lesson-answer-pill {
+    width: 100%;
+    text-align: center;
+    padding-top: 0.85rem !important;
+    padding-bottom: 0.85rem !important;
+  }
+
+  .footer-donate-modal {
+    padding: 1rem !important;
+  }
 }

@@ -31,7 +31,7 @@ export default function TopNav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
       <div className="container">
-        <Link className="navbar-brand fw-bold text-primary fs-4 tracking-tight d-flex align-items-center gap-2" to="/" onClick={close}>
+        <Link className="navbar-brand nav-brand fw-bold text-primary fs-4 tracking-tight d-flex align-items-center gap-2" to="/" onClick={close}>
           <img src={logo} alt="Mouseflow logo" style={{ height: 32 }} />
           Mouseflow
         </Link>
@@ -45,8 +45,8 @@ export default function TopNav() {
           <span className="navbar-toggler-icon" />
         </button>
 
-        <div className={`collapse navbar-collapse${expanded ? " show" : ""}`}>
-          <ul className="navbar-nav ms-auto align-items-center gap-lg-3">
+        <div className={`collapse navbar-collapse nav-panel${expanded ? " show" : ""}`}>
+          <ul className="navbar-nav ms-auto align-items-center gap-lg-3 nav-links-wrap">
             {commonLinks.map((link) => (
               <li className="nav-item" key={link.to}>
                 <NavLink
@@ -73,7 +73,7 @@ export default function TopNav() {
                   toggleTheme();
                   close();
                 }}
-                className="btn btn-outline-primary btn-sm rounded-pill theme-toggle d-flex align-items-center"
+                className="btn btn-outline-primary btn-sm rounded-pill theme-toggle d-flex align-items-center justify-content-center nav-action-btn"
               >
                 {theme === "light" ? (
                   <>
@@ -91,17 +91,17 @@ export default function TopNav() {
 
             <li className="nav-item ms-lg-2">
               {location.pathname === "/login" ? (
-                <Link className="btn btn-primary rounded-pill px-4 fw-semibold shadow-sm text-white" to="/" onClick={close}>
+                <Link className="btn btn-primary rounded-pill px-4 fw-semibold shadow-sm text-white nav-action-btn" to="/" onClick={close}>
                   Ir a inicio
                 </Link>
               ) : user ? (
-                <button className="btn btn-outline-danger rounded-pill px-4 fw-semibold btn-sm" onClick={handleLogout}>
+                <button className="btn btn-outline-danger rounded-pill px-4 fw-semibold btn-sm nav-action-btn" onClick={handleLogout}>
                   <i className="bi bi-box-arrow-right me-1" />
                   Salir
                 </button>
               ) : (
-                <Link className="btn btn-primary rounded-pill px-4 fw-semibold shadow-sm text-white" to="/login" onClick={close}>
-                  Iniciar sesiÃ³n
+                <Link className="btn btn-primary rounded-pill px-4 fw-semibold shadow-sm text-white nav-action-btn" to="/login" onClick={close}>
+                  Login
                 </Link>
               )}
             </li>

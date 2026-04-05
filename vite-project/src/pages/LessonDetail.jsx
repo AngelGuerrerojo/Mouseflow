@@ -112,7 +112,7 @@ export default function LessonDetail() {
   }
 
   return (
-    <div className="container py-5">
+    <div className="container py-5 lesson-shell">
       <div className="d-flex align-items-start justify-content-between flex-wrap gap-3 mb-4">
         <div>
           <p className="text-secondary mb-1">Lección {lesson.orden}</p>
@@ -172,7 +172,7 @@ export default function LessonDetail() {
                         draggable
                         onDragStart={(e) => onDragStart(e, r.id_respuesta)}
                         onClick={() => handleAnswer(q.id_pregunta, r.id_respuesta)}
-                        className={`badge rounded-pill px-3 py-2 cursor-pointer ${
+                        className={`badge rounded-pill px-3 py-2 cursor-pointer lesson-answer-pill ${
                           selected === r.id_respuesta ? "bg-primary text-white" : "bg-light text-dark border"
                         }`}
                         style={{ userSelect: "none" }}
@@ -199,7 +199,7 @@ export default function LessonDetail() {
               );
             })}
 
-            <div className="d-flex align-items-center gap-3">
+            <div className="d-flex align-items-start align-items-md-center gap-3 flex-column flex-md-row lesson-evaluate-actions">
               <button
                 type="button"
                 className="btn btn-success"

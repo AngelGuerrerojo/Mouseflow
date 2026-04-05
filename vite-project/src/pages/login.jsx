@@ -39,7 +39,7 @@ export default function Login() {
   };
 
   return (
-    <section className="bg-hero-gradient min-vh-100 d-flex align-items-center justify-content-center py-5">
+    <section className="bg-hero-gradient min-vh-100 d-flex align-items-center justify-content-center py-5 auth-page">
       <button
         type="button"
         onClick={toggleTheme}
@@ -62,10 +62,10 @@ export default function Login() {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-md-8 col-lg-5">
-            <div className="card border-0 shadow-lg rounded-4 overflow-hidden">
+            <div className="card border-0 shadow-lg rounded-4 overflow-hidden auth-card">
               <div className="bg-primary bg-gradient p-4 text-center">
                 <button
-                  className="text-white text-decoration-none fs-3 fw-bold tracking-tight btn btn-link p-0 text-reset"
+                  className="text-white text-decoration-none fs-3 fw-bold tracking-tight btn btn-link p-0 text-reset auth-brand"
                   type="button"
                   onClick={() => navigate("/")}
                 >
@@ -127,7 +127,7 @@ export default function Login() {
                     className="btn btn-primary w-100 py-3 rounded-pill fw-bold shadow-sm mb-4 mt-2"
                     disabled={loading}
                   >
-                    {loading ? "Procesando..." : "Iniciar Sesion"}
+                    {loading ? "Procesando..." : "Login"}
                   </button>
 
                   <div className="text-center">

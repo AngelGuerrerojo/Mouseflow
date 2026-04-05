@@ -80,8 +80,8 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="container py-5">
-      <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5 mt-4 border-bottom pb-3">
+    <div className="container py-5 dashboard-shell">
+      <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-5 mt-4 border-bottom pb-3">
         <div className="mb-3 mb-md-0">
           <h2 className="fw-bold text-primary mb-1">¡Hola, {stats?.nombre_usuario || user.correo}!</h2>
           <p className="text-secondary mb-0">Repasa tu avance y continúa con la siguiente lección.</p>
@@ -139,7 +139,7 @@ export default function Dashboard() {
 
       <div className="d-flex flex-column align-items-center text-center gap-3 mb-4">
         <h4 className="fw-bold text-dark mb-0">Explora</h4>
-        <div className="d-flex flex-wrap justify-content-center gap-2">
+        <div className="d-flex flex-wrap justify-content-center gap-2 dashboard-explore-actions">
           <button
             type="button"
             className="btn btn-primary rounded-pill px-4 py-2 fw-semibold"
@@ -207,7 +207,7 @@ export default function Dashboard() {
 
       {showDictionary && (
         <div className="card border-0 shadow-sm rounded-4 overflow-hidden mb-5">
-          <div className="card-header bg-white border-bottom d-flex justify-content-between align-items-center">
+          <div className="card-header bg-white border-bottom d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2">
             <h5 className="fw-bold text-dark mb-0">Diccionario</h5>
             {dictLoading && <span className="text-muted small">Cargando...</span>}
           </div>
@@ -221,7 +221,7 @@ export default function Dashboard() {
                 <div className="fw-bold text-dark">{item.palabra}</div>
                 <div className="text-muted small">{item.definicion}</div>
                 {item.ejemplo_codigo && (
-                  <pre className="bg-light border rounded p-2 mt-2 mb-0 small text-secondary">
+                  <pre className="bg-light border rounded p-2 mt-2 mb-0 small text-secondary dashboard-code-block">
                     {item.ejemplo_codigo}
                   </pre>
                 )}

@@ -7,7 +7,7 @@ import Profile from "../pages/Profile";
 import Ranking from "../pages/Ranking";
 import LessonDetail from "../pages/LessonDetail";
 import Dictionary from "../pages/Dictionary";
-import Login from "../pages/Login";
+import Login from "../pages/login";
 import Register from "../pages/Register";
 import { getCurrentUser } from "../lib/api";
 

@@ -30,7 +30,7 @@ export default function Login() {
     } catch (err) {
       const message =
         err.message === "Failed to fetch"
-          ? "No se pudo conectar al servidor. Asegurate de que la API este corriendo en http://localhost:3000."
+          ? "No se pudo conectar al servidor. Asegúrate de que la API esté disponible en https://mouseflow.onrender.com."
           : err.message;
       setError(message);
     } finally {

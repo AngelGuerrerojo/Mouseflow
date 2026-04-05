@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.VITE_API_URL ?? "http://localhost:3000/api";
+const API_BASE = import.meta.env.VITE_API_URL ?? "https://mouseflow.onrender.com/api";
 
 async function apiFetch(path, options = {}) {
   const resp = await fetch(`${API_BASE}${path}`, {

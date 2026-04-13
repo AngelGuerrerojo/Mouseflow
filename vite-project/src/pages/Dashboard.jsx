@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { dashboardApi, getCurrentUser, lessonApi, progressApi, dictionaryApi } from "../lib/api";
 import { Link } from "react-router";
+import MemoryGame from "../components/MemoryGame";
 
 export default function Dashboard() {
   const user = getCurrentUser();
@@ -15,12 +16,15 @@ export default function Dashboard() {
   const [showLessons, setShowLessons] = useState(false);
   const [showDictionary, setShowDictionary] = useState(false);
   const [showExtra, setShowExtra] = useState(false);
+  const [activeExtra, setActiveExtra] = useState("video-1");
 
-  const extraVideos = [
-    { title: "Contenido extra 1", videoId: "5EqYLM2eoGM" },
-    { title: "Contenido extra 2", videoId: "LXb3EKWsInQ" },
-    { title: "Contenido extra 3", videoId: "9bZkp7q19f0" },
+  const extraItems = [
+    { id: "video-1", title: "Contenido extra 1", type: "video", videoId: "5EqYLM2eoGM" },
+    { id: "video-2", title: "Contenido extra 2", type: "video", videoId: "LXb3EKWsInQ" },
+    { id: "video-3", title: "Contenido extra 3", type: "video", videoId: "9bZkp7q19f0" },
+    { id: "game", title: "Juego", type: "game" },
   ];
+  const currentExtra = extraItems.find((item) => item.id === activeExtra) ?? extraItems[0];
 
   useEffect(() => {
     async function load() {
@@ -235,24 +239,41 @@ export default function Dashboard() {
         <div className="card border-0 shadow-sm rounded-4 overflow-hidden mb-5">
           <div className="card-header bg-white border-bottom">
             <h5 className="fw-bold text-dark mb-0">Contenido extra</h5>
-            <p className="text-secondary mb-0 small">Videos recomendados desde YouTube.</p>
+            <p className="text-secondary mb-0 small">Videos recomendados y un minijuego para repasar conceptos.</p>
           </div>
           <div className="card-body">
-            <div className="row g-3">
-              {extraVideos.map((vid) => (
-                <div className="col-md-4" key={vid.videoId}>
-                  <div className="ratio ratio-16x9 rounded overflow-hidden">
+            <div className="d-flex flex-wrap gap-2 mb-4 extra-selector">
+              {extraItems.map((item) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  className={`btn rounded-pill px-4 py-2 fw-semibold ${
+                    activeExtra === item.id ? "btn-primary" : "btn-outline-primary"
+                  }`}
+                  onClick={() => setActiveExtra(item.id)}
+                >
+                  {item.title}
+                </button>
+              ))}
+            </div>
+
+            {currentExtra.type === "video" ? (
+              <div className="row justify-content-center">
+                <div className="col-lg-9">
+                  <div className="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
                     <iframe
-                      src={`https://www.youtube.com/embed/${vid.videoId}`}
-                      title={vid.title}
+                      src={`https://www.youtube.com/embed/${currentExtra.videoId}`}
+                      title={currentExtra.title}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     />
                   </div>
-                  <p className="fw-semibold text-dark mt-2 mb-0">{vid.title}</p>
+                  <p className="fw-semibold text-dark mt-3 mb-0 text-center">{currentExtra.title}</p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ) : (
+              <MemoryGame />
+            )}
           </div>
         </div>
       )}

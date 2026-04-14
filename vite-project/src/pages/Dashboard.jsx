@@ -20,8 +20,8 @@ export default function Dashboard() {
 
   const extraItems = [
     { id: "video-1", title: "Contenido extra 1", type: "video", videoId: "5EqYLM2eoGM" },
-    { id: "video-2", title: "Contenido extra 2", type: "video", videoId: "LXb3EKWsInQ" },
-    { id: "video-3", title: "Contenido extra 3", type: "video", videoId: "9bZkp7q19f0" },
+    { id: "video-2", title: "Contenido extra 2", type: "video", videoId: "V-ci353y0y4" },
+    { id: "video-3", title: "Contenido extra 3", type: "video", videoId: "lu2axp_7Tnw" },
     { id: "game", title: "Juego", type: "game" },
   ];
   const currentExtra = extraItems.find((item) => item.id === activeExtra) ?? extraItems[0];

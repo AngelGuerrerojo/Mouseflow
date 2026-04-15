@@ -39,14 +39,6 @@ export default function Landing() {
                 >
                   Empezar Gratis
                 </button>
-                <button
-                  type="button"
-                  onClick={() => navigate("/menu")}
-                  className="btn btn-outline-primary btn-lg rounded-pill px-4 fw-semibold border-2"
-                >
-                  <i className="bi bi-play-circle me-2" />
-                  Demo
-                </button>
               </div>
 
             </div>
